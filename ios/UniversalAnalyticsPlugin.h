@@ -6,9 +6,9 @@
 #import "GAI.h"
 
 @interface UniversalAnalyticsPlugin : CDVPlugin {
-    bool _trackerStarted;
     bool _debugMode;
 	NSMutableDictionary *_customDimensions;
+    NSMutableDictionary *_trackers;
 }
 
 - (void) startTrackerWithId: (CDVInvokedUrlCommand*)command;
