@@ -374,4 +374,16 @@
                                 callbackId:command.callbackId];
 }
 
+- (void) setSampling: (CDVInvokedUrlCommand*)command
+{
+    NSNumber *sampling = [command.arguments objectAtIndex:0];
+    NSString *trackerId = [command.arguments objectAtIndex:1];
+    NSString *samplingValue = [NSString stringWithFormat:@"%.1g", [sampling doubleValue]];
+    
+    id<GAITracker> tracker = [self getTrackerWithId:trackerId];
+    
+    [tracker set:kGAISampleRate value:samplingValue];
+    
+}
+
 @end
