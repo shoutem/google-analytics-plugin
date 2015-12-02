@@ -22,6 +22,7 @@
 - (void) trackException: (CDVInvokedUrlCommand*)command;
 - (void) addTransaction: (CDVInvokedUrlCommand*)command;
 - (void) addTransactionItem: (CDVInvokedUrlCommand*)command;
+- (void) setSampling: (CDVInvokedUrlCommand*)command;
 
 @end
 
