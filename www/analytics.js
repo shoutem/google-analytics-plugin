@@ -68,4 +68,9 @@ UniversalAnalyticsPlugin.prototype.enableUncaughtExceptionReporting = function (
   cordova.exec(success, error, 'UniversalAnalytics', 'enableUncaughtExceptionReporting', [enable, trackerId]);
 };
 
+/* enables tracker sampling */
+UniversalAnalyticsPlugin.prototype.setSampling = function (sampling, trackerId, success, error) {
+  cordova.exec(success, error, 'UniversalAnalytics', 'setSampling', [sampling, trackerId]);
+};
+
 module.exports = new UniversalAnalyticsPlugin();

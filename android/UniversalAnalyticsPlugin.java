@@ -25,6 +25,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
     public static final String ADD_DIMENSION = "addCustomDimension";
     public static final String ADD_TRANSACTION = "addTransaction";
     public static final String ADD_TRANSACTION_ITEM = "addTransactionItem";
+    public static final String SET_SAMPLING = "setSampling";
 
     public static final String SET_USER_ID = "setUserId";
     public static final String DEBUG_MODE = "debugMode";
@@ -126,6 +127,10 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
             Boolean enable = args.getBoolean(0);
             String trackerId = args.getString(1);
             this.enableUncaughtExceptionReporting(enable, trackerId, callbackContext);
+        } else if (SET_SAMPLING.equals(action)) {
+            Double sampling = args.getDouble(0);
+            String trackerId = args.getString(1);
+            this.setSampling(sampling, trackerId, callbackContext);
         }
         return false;
     }
@@ -353,5 +358,17 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
         Tracker tracker = getTracker(trackerId);
         tracker.enableExceptionReporting(enable);
         callbackContext.success((enable ? "Enabled" : "Disabled") + " uncaught exception reporting");
+    }
+
+    private void setSampling(Double sampling, String trackerId, CallbackContext callbackContext) {
+        Tracker tracker = getTracker(trackerId);
+
+        if (tracker == null) {
+            callbackContext.error("Tracker " + trackerId + " not found");
+            return;
+        }
+
+        tracker.setSampleRate(sampling);
+        callbackContext.success("Set sampling rate to: " + sampling);
     }
 }
