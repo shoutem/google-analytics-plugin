@@ -113,11 +113,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GoogleAnalytics, Version=1.3.0.27584, Culture=neutral, processorArchitecture=ARM">
+    <Reference Include="GoogleAnalytics, Version=1.3.0.27358, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\GoogleAnalytics.winmd</HintPath>
     </Reference>
-    <Reference Include="GoogleAnalytics.Core, Version=1.3.0.27583, Culture=neutral, processorArchitecture=ARM">
+    <Reference Include="GoogleAnalytics.Core, Version=1.3.0.27356, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\GoogleAnalytics.Core.winmd</HintPath>
     </Reference>
