@@ -76,6 +76,8 @@
     <js-module src="windows/AnalyticsPluginProxy.js" name="AnalyticsPluginProxy">
       <runs/>
     </js-module>
+	<framework src="windows/GoogleAnalytics.Core.winmd" custom="true"/>
+	<framework src="windows/GoogleAnalytics.winmd" custom="true"/>
 	<framework src="windows/AnalyticsPlugin.winmd" custom="true"/>
   </platform>
 </plugin>
