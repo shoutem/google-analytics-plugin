@@ -9,7 +9,6 @@
             if (success) {
                 success(res.success);
             }
-            shm.nwapi.showAlertDialog(res.success, success, "title");
         }
     };
     module.exports = {
