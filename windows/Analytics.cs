@@ -11,7 +11,7 @@ namespace AnalyticsPlugin
 {
     public sealed class Analytics
     {
-        private static TrackerManager trackerManager = new TrackerManager(new PlatformInfoProvider());
+        private static TrackerManager trackerManager = new GoogleAnalytics.Core.TrackerManager(new GoogleAnalytics.PlatformInfoProvider());
         private static IDictionary<int, string> customDimensions = new Dictionary<int, string>();
         private static IDictionary<string, Tracker> trackers = new Dictionary<string, Tracker>();
 
@@ -24,7 +24,6 @@ namespace AnalyticsPlugin
                 Tracker tracker = trackerManager.GetTracker(id);
                 tracker = trackerManager.GetTracker(id);
                 tracker.SetStartSession(true);
-                tracker.IsUseSecure = true;
                 tracker.AppName = AppInfoProvider.ApplicationName;
                 tracker.AppVersion = AppInfoProvider.ApplicationVersion;
                 AddTracker(id, tracker);
